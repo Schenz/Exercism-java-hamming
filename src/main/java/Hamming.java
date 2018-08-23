@@ -2,6 +2,7 @@ class Hamming {
 
     private String leftStrand;
     private String rightStrand;
+    private int hammingDistance;
 
     Hamming(String leftStrand, String rightStrand) {
         if (leftStrand.length() != rightStrand.length()) {
@@ -10,9 +11,7 @@ class Hamming {
 
         this.leftStrand = leftStrand;
         this.rightStrand = rightStrand;
-    }
 
-    int getHammingDistance() {
         int distance = 0;
 
         for (int index1 = 0; index1 < this.leftStrand.length(); index1++) {
@@ -21,7 +20,11 @@ class Hamming {
             }
         }
 
-        return distance;
+        this.hammingDistance = distance;
+    }
+
+    int getHammingDistance() {
+        return this.hammingDistance;
     }
 
 }
